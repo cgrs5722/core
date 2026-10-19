@@ -1,9 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
-# This workflow only exists to allow manual deployments of this repo e.g. to test servers.
+# This environment workflow runs for manual deployments of this repo, it handles:
 #
-# It leverages existing reusable workflows similar to the staging.yml environment workflow but unlike the staging.yml
-# workflow it only includes the required jobs for deployments: install-dist and deployment (see deployment.yml for how
-# deployments work). Custom projects use custom-deploy.yml instead.
+# - Building and deploying the selected commit (see deployment.yml for how deployments work)
 #
 # MANUAL TRIGGER
 #
@@ -21,6 +19,8 @@
 #
 # When triggered on a tag the 'workflow_dispatch' deploy entry in '.ci_cd/ci_cd.json' is used instead of ENVIRONMENT
 # and MANAGER_TAG.
+#
+# Custom projects use custom-deploy.yml instead.
 # ---------------------------------------------------------------------------------------------------------------------
 
 name: Deploy

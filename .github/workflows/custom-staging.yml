@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------------------------------------------------
-# This workflow handles all CI/CD tasks for commits pushed to custom projects
+# This environment workflow runs for pushed commits of custom projects
 # (https://github.com/openremote/custom-project), it handles:
 #
 # - Linting, building and testing, as in custom-review.yml
@@ -8,22 +8,6 @@
 # Without such an entry the deployment job is skipped, use custom-deploy.yml for manual deployments. An entry without
 # an environment, e.g. { "push": { "main": { "deploy": {} } } }, only uses '.ci_cd/env/.env' and secrets without an
 # environment prefix.
-#
-# USAGE
-#
-# Call this workflow from a push workflow in the custom project:
-#
-#   on:
-#     push:
-#       branches: [main]
-#
-#   jobs:
-#     call-main-repo:
-#       name: CI/CD
-#       uses: openremote/core/.github/workflows/custom-staging.yml@main
-#       with:
-#         INPUTS: ${{ toJSON(github.event.inputs) }}
-#       secrets: inherit
 #
 # The calling workflow must not use the same concurrency group as this workflow, GitHub cancels the run as a deadlock.
 # ---------------------------------------------------------------------------------------------------------------------

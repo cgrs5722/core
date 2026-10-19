@@ -1,13 +1,8 @@
 # ---------------------------------------------------------------------------------------------------------------------
-# This workflow handles all CI tasks for pull requests and the merge queue of this repo, it handles:
+# This environment workflow runs for pull requests and merge queue checks of this repo, it handles:
 #
-# - Linting (Spotless, UI dependencies and outdated translations)
-# - Building the project and the manager and deployment docker images (images are not pushed)
-# - Running backend, UI component and UI app tests and collecting code coverage
-# - Running an npm publish dry run
-#
-# Jobs are skipped based on which files changed (see the detect-changes job). The called workflows handle the skip
-# themselves, so skipped jobs still report a status for branch protection checks.
+# - Linting, building and testing
+# - Checking that the packages can be published
 #
 # Custom projects use custom-review.yml instead.
 # ---------------------------------------------------------------------------------------------------------------------

@@ -1,8 +1,5 @@
 # ---------------------------------------------------------------------------------------------------------------------
-# This workflow does the deployments for custom-staging.yml, deploy.yml and custom-deploy.yml, it is not meant to be
-# called directly.
-#
-# DEPLOYMENTS
+# This job workflow does the deployments for custom-staging.yml, deploy.yml and custom-deploy.yml.
 #
 # The repo must contain a 'deployment/Dockerfile' and a 'deployment/build.gradle' with an installDist task that prepares
 # the deployment image in the 'deployment/build' directory; if this condition is not met the deployment will fail.
@@ -35,7 +32,7 @@
 #
 # When the '_TEMP_GFE_PASSWORD' secret is set it is used to decrypt the encrypted files of the deployment build.
 #
-# SEE https://github.com/openremote/core/tree/main/.ci_cd for details of standard variables and handling.
+# See https://github.com/openremote/core/tree/main/.ci_cd for details of standard variables and handling.
 # ---------------------------------------------------------------------------------------------------------------------
 
 name: Deployment
