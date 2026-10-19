@@ -1,3 +1,31 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# This workflow handles all CI tasks for pull requests in custom projects
+# (https://github.com/openremote/custom-project), it handles:
+#
+# - Linting (Spotless)
+# - Building the project including the deployment, nothing is published
+# - Running unit and integration tests
+#
+# Jobs are skipped based on which files changed (see the detect-changes job).
+#
+# USAGE
+#
+# Call this workflow from a pull_request workflow in the custom project:
+#
+#   on:
+#     pull_request:
+#
+#   jobs:
+#     call-main-repo:
+#       name: CI/CD
+#       uses: openremote/core/.github/workflows/custom-review.yml@main
+#       with:
+#         INPUTS: ${{ toJSON(github.event.inputs) }}
+#       secrets: inherit
+#
+# The calling workflow must not use the same concurrency group as this workflow, GitHub cancels the run as a deadlock.
+# ---------------------------------------------------------------------------------------------------------------------
+
 name: Custom review
 
 on:

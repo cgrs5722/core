@@ -1,3 +1,17 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# This workflow handles all CI/CD tasks for commits pushed to main and for releases of this repo, it handles:
+#
+# - Linting, building and testing, as in review.yml
+# - Pushing openremote/manager docker images to docker hub, the tags are configured in '.ci_cd/ci_cd.json'
+# - Publishing Maven and npm packages
+# - Updating the openremote/extensions repo to the new version
+#
+# Releases are created by release.yml, which pushes the release tag and then triggers this workflow on that tag; the
+# 'release' section of '.ci_cd/ci_cd.json' then applies instead of 'push' (see .ci_cd/README.md for more details).
+#
+# This workflow does not deploy, use deploy.yml for manual deployments. Custom projects use custom-staging.yml instead.
+# ---------------------------------------------------------------------------------------------------------------------
+
 name: Staging
 
 on:
