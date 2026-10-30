@@ -1,0 +1,20 @@
+manager/src/main/java/org/openremote/manager/gateway/GatewayService.java
+  s_e2f494c22389da::t_befbbdeddc1dab 928-930
+  s_e2f494c22389da::t_7e4545f624ceed 749-750
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "256acea5bf4e193a5f5168aafe77066fdbad531e",
+  "prompts": {},
+  "sessions": {
+    "s_e2f494c22389da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "18395d29-73c1-4fca-b6cc-10139cccca88",
+        "model": "glm-5.3"
+      },
+      "human_author": "cgrs5722 <265155194+cgrs5722@users.noreply.github.com>"
+    }
+  }
+}
